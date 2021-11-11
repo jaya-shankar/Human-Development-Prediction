@@ -1,13 +1,13 @@
 import csv
 
-file  = open("population.csv")
+file  = open("../datasets/converted_pop.csv")
 
 csvreader = csv.reader(file)
 
 header = next(csvreader)
 l = len(header)
 
-with open('converted_pop.csv', 'w', encoding='UTF8') as f:
+with open('converted_pop_b.csv', 'w', encoding='UTF8') as f:
     writer = csv.writer(f)
 
     # write the header
@@ -24,6 +24,10 @@ with open('converted_pop.csv', 'w', encoding='UTF8') as f:
                 # print(int(float(row[e][:-1])*m))
             elif(row[e][-1]=='M'):
                 m=1000000
+                s.append(str(int(float(row[e][:-1])*m)))
+                # print(int(float(row[e][:-1])*m))
+            elif(row[e][-1]=='B'):
+                m=1000000000
                 s.append(str(int(float(row[e][:-1])*m)))
                 # print(int(float(row[e][:-1])*m))
             else:
