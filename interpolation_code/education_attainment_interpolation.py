@@ -5,7 +5,7 @@ import pandas as pd
 years = [(y,y+5) for y in range(1960,2011,5)]
 datasets = ['Primary_OL', 'Lower_Secondary_OL']
 
-file_prefix = "wcde-"
+file_prefix = "wcde-female_"
 
 for name in datasets:
   data = pd.read_csv("../datasets/"+file_prefix+name+".csv")   
