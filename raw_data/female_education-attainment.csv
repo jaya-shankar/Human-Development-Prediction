@@ -1,11 +1,3 @@
-Source: Wittgenstein Centre for Demography and Global Human Capital (2018). Wittgenstein Centre Data Explorer Version 2.0
-Available at: www.wittgensteincentre.org/dataexplorer 
-
-""
-"Educational Attainment Distribution"
-"De facto population by level of educational attainment in a country or region, classified by sex and by five-year age groups. Available in all scenarios and at all geographical scales. Figures are expressed as a percentage."
-"Medium (SSP2)"
-" "
 "Area","Year","Age","Sex","Education","Distribution"
 "Afghanistan",1960,"20--24","Female","Under 15",0
 "Afghanistan",1965,"20--24","Female","Under 15",0
