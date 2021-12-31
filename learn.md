@@ -10,3 +10,8 @@
 - https://towardsdatascience.com/fast-and-accurate-learning-with-transfer-learning-on-tabular-data-how-and-why-dfe4e752bb2d
 - https://www.tensorflow.org/tutorials/structured_data/preprocessing_layers
 - https://towardsdatascience.com/deep-neural-networks-for-regression-problems-81321897ca33
+- https://towardsdatascience.com/cart-classification-and-regression-trees-for-clean-but-powerful-models-cc89e60b7a85
+
+- https://www.tensorflow.org/decision_forests/api_docs/python/tfdf/keras/RandomForestModel
+- https://www.tensorflow.org/decision_forests/api_docs/python/tfdf/keras/get_all_models
+- 
