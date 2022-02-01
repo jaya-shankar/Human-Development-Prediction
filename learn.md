@@ -14,4 +14,6 @@
 
 - https://www.tensorflow.org/decision_forests/api_docs/python/tfdf/keras/RandomForestModel
 - https://www.tensorflow.org/decision_forests/api_docs/python/tfdf/keras/get_all_models
-- 
+
+
+- https://www.marinedatascience.co/blog/2019/01/07/normalizing-the-rmse/
