@@ -1,44 +1,74 @@
 # education-impact
 A ML model to find which factors influence the development of the country the most
 
+# Goal
+Our goal to find the most important indicator among the four indices which drives the development of a country and also how are these indicators are interrelated
 ## Approach
 Initially we tried to predict country's development factors 40 years ahead, but due to data unavailability ,it's not feasible approach
 
-Now we are trying to predict development factors 5-10 years ahead and we are considering only education levels of 20-25 age group people, reason for this approach i
-in general most of the population education level reaches saturation point by the time they reach 25 and from 25 they start to contribute to the society ( working )
-in this way by predicting 5-10 yrs ahead we can check how education is impacting the country's development
+We tried to find is there is any correaltion between different indicators using Random forest and Gradient Tree Algoritims
 
-## Random Forest
-### First Attempt
-We trained a TensorFlow RandomForest without any data interpolation
+## Models Built
+We built 2 x 5 different models each one for each Human Development Indices 
+1) Life Expectancy
+2) Babies Born per Woman
+3) GDP per capita US inflation adjusted
+4) Primary Education Completion rate ( 20 - 24 Age group )
+5) Secondary Education Completion rate ( 20 - 24 Age group )
+i ) Model built using all countries data
+ii ) Model built using only developing/undeveloped* countries data
 
-train : test = 70 : 30
+## Findings
+The values in the cells are NRMSE scores of the best performing models for each predictor 
 
-total data points : 2834
+**Models considering all countries**
+| Indicator Predicted      | Random Forest | Gradient Tree     |
+| :---        |    :----:   |          ---: |
+| Life Expectancy      | 0.03200       | 0.02672   |
+| Total Fertility Rate   | 0.08868        | 0.10664     |
+| GDP per capita     | 0.12329       | -  |
+| Primary Education Comp.   | 0.04720        | 0.04191    |
+| Lower Sec Education Comp.   | 0.05076        | 0.05758    |
 
-prediction years = 40
-#### model performance:
+**Models considering only Developing/Undeveloped countries**
+| Indicator Predicted      | Random Forest | Gradient Tree     |
+| :---        |    :----:   |          ---: |
+| Life Expectancy      | 0.03431     | 0.02386   |
+| Total Fertility Rate   | 0.05421        | 0.04755     |
+| GDP per capita     | 0.18760       | -  |
+| Primary Education Comp.   | 0.07726       | 0.06950    |
+| Lower Sec Education Comp.   | 0.09420      | 0.07881    |
 
-"malnutrition","maternal_mortality","people_in_poverty"  were not used by the model.
+## Conclusions
+Based on NRMSE scores we can rely on the Life Expectancy Model ( all / developing ) , TFR ( developing ), Primary & Lower Secondary Completion Rate ( all ) and Primary & Lower Secondary Completion Rate ( developing ) models to some extend
 
-**MSE** : 5.545248985290527
+We can say Total Fertility Rate & Life Expectancy are highly interlinked i.e., both are interdependent based on models built using all countries data, and second important indicator to predict both of them is female higher secondary education completion rate followed by other female education completion rate in chronological order
 
-**RMSE**: 2.354835235274546
- ![First Attempt Decision Tree](images/firstAttempt.png)
+To improve Life Expectancy & Total Fertility Rate of developing/undeveloped countries , the important indicator which needs to focused on is Female Education Levels.The better the female education the faster the improvement of the indicators
 
- ### Second Attempt
-We trained a TensorFlow RandomForest with WCDE datasets, data interpolation
+Also one of the interesting fact we found based on the models is GDP per capita & population did not show up as important indicator to predict Life Expectancy & Total Fertility Rate
 
-train : test = 70 : 30
+We cannot rely on GDP per capita model results because of high NRMSE score even after including 20 yrs old GDP data the model built was not reliable so we conclude predication of GDP per capita using the given indicators and algorithms we used
 
-total data points : 2834
+Predication of Primary education is highly dependent on 20 yrs old Under 5 Child Mortality rate and in turn U5MR is dependent on Primary education completion rate for both all and developing countries dataset so we conclude that primary education completion rate is dependent on itself
 
-prediction years = 40
-#### model performance:
+Predication of Lower Secondary Education compeletion is highly dependent on 20 yrs old Primary Education Completion rate that is parent’s generation education and 10 yrs CO2 emission per capita which is proxy for economic state of the country so we conclude to improve lower secondary education level one must focus on improving the primary education levels
 
-"malnutrition","maternal_mortality","people_in_poverty"  were not used by the model.
+# Future Work
+We are really interested to understand countries which have fast transition from undeveloped/developing to developed countries in all indicators
+What we did was we found out all top performing countries in all the indicators in the following manner
+- The country should be in bottom 50% countries in the year 1960 in all aspects
+- The country should be in top 10% countries in the year 2015 in all aspects.By using the above constraints we got the following countries as top performing countries
+   - China,
+   - South Korea
+   - Thailand
+   - Singapore
 
-**MSE** : 3.8452484607696533
 
-**RMSE**: 1.9609305089088835
- ![First Attempt Decision Tree](images/secondAttempt.png)
+We want to find out by improving which at the beginning helped the following to countries to have rapid growth , RNN is one of the algorithms that can be applied to analyse
+
+We can improve model performance by adding more indicators and analyse them
+
+We could not find proper predictions for GDP per capita, we believe there is more research and analysis needed to be done and try with more indicators
+
+We tried regression using deep neural networks and the results are not presented in the paper as we couldn’t understand how to analyze the model that weight of each indicator but the code for training is available in the repository
