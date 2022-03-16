@@ -1,5 +1,5 @@
 
-# Indicators
+#### Indicators
 
 LE  = Life Expectancy
 TFR = Total Fertility Rate
@@ -7,12 +7,13 @@ PE  = Primary Education
 LS  = Lower Secondary Education
 GDP = Gross Domestic Product
 
-# Model
+#### Model
 
 RF  = Random Forest
 GT  = Gradient Tree
 
-# Datasets
+#### Datasets
 
 AC  = All Countries
 DC  = Developing Countries
+
