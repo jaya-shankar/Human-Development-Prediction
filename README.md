@@ -12,12 +12,33 @@ We tried to find is there is any correaltion between different indicators using 
 ## Models Built
 We built 2 x 5 different models each one for each Human Development Indices 
 1) Life Expectancy
-2) Babies Born per Woman
+2) Total Fertility Rate
 3) GDP per capita US inflation adjusted
 4) Primary Education Completion rate ( 20 - 24 Age group )
 5) Secondary Education Completion rate ( 20 - 24 Age group )
 i ) Model built using all countries data
 ii ) Model built using only developing/undeveloped* countries data
+
+## Features
+Features/Indicators used to train the model in predicting the state of the country
+1) Life Expectancy
+2) Infant Mortality Rate
+3) Under 5 Mortality Rate
+4) Total Fertility Rate
+5) Primary Education Completion for age group 20-24\*
+6) Lower Secondary Education Completion for age group 20-24
+7) Higher Secondary Education Completion for age group 20-24
+8) Female Primary Education Completion for age group 20-24
+9) Female Lower Secondary Education Completion for age group 20-24
+10) Female Higher Secondary Education Completion for age group 20-24
+11) Population
+12) GDP per Capita
+13) Gini Index
+14) CO2 emissions per capita
+
+_Note_: Not all features are used in all the models we choose specific features each model based on some assumptions and data visualization which are mentioned in the report
+/* -> The reason for using education levels of age group 20-24 is mentioned in the report
+
 
 ## Findings
 The values in the cells are NRMSE scores of the best performing models for each predictor 
