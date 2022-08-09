@@ -39,6 +39,8 @@ Features/Indicators used to train the model in predicting the state of the count
 _Note_: Not all features are used in all the models we choose specific features each model based on some assumptions and data visualization which are mentioned in the report
 /* -> The reason for using education levels of age group 20-24 is mentioned in the report
 
+## Macro Level Diagram
+![Macro Level Diagram](https://github.com/jaya-shankar/Human-Development-Prediction/blob/master/Macro%20level%20Diagram.png)
 
 ## Findings
 The values in the cells are NRMSE scores of the best performing models for each predictor 
