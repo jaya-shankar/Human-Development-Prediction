@@ -96,3 +96,4 @@ We can improve model performance by adding more indicators and analyse them
 We could not find proper predictions for GDP per capita, we believe there is more research and analysis needed to be done and try with more indicators
 
 We tried regression using deep neural networks and the results are not presented in the paper as we couldn’t understand how to analyze the model that weight of each indicator but the code for training is available in the repository
+Countries which are at war or political instabilty couldn't perform as expected by the HDI, Beacuse of the change in policies or consequences od the War, Which should be taken into account in Future work
